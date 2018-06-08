@@ -1,30 +1,32 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "lua-easy-crypto"
-version = "0.0.4-1"
+version = "1.0.0-1"
 -- LuaDist source
 source = {
-  tag = "0.0.4-1",
+  tag = "1.0.0-1",
   url = "git://github.com/LuaDist-testing/lua-easy-crypto.git"
 }
 -- Original source
 -- source = {
 --    url = "git+https://github.com/szeist/lua-easy-crypto.git",
---    tag = "v0.0.4",
+--    tag = "v1.0.0",
 -- }
 description = {
-   summary = "Simple interface for password based AES-256-GCM encryption and decryption.",
+   summary = "Simple interface for password based AES-256 encryption and decryption.",
    homepage = "https://github.com/szeist/lua-easy-crypto",
    license = "MIT"
 }
 dependencies = {
   "lua >= 5.1",
-  "lua-resty-nettle == 0.105"
+  "luaossl == 20171028-0",
+  "fly-bgcrypto-pbkdf2 == 0.0.1-1",
+  "fly-bgcrypto-sha == 0.0.1-1",
+  "lbase64 == 20120820-1"
 }
 build = {
    type = "builtin",
    modules = {
-     ["resty.easy-crypto"] = "src/easy-crypto.lua",
-     ["resty.easy-crypto.stringutils"] = "src/easy-crypto/stringutils.lua"
+     ["resty.easy-crypto"] = "src/easy-crypto.lua"
    }
 }
